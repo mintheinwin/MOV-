@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PADAC-MOVIE-POC.iml" filepath="$PROJECT_DIR$/PADAC-MOVIE-POC.iml" />
+      <module fileurl="file://C:\Users\Aspire-V5\Downloads\PADC-POC-Screen-Implementation-master\PADC-POC-Screen-Implementation - Copy.iml" filepath="C:\Users\Aspire-V5\Downloads\PADC-POC-Screen-Implementation-master\PADC-POC-Screen-Implementation - Copy.iml" />
+      <module fileurl="file://C:\Users\HHK\Desktop\New folder (7)\POC-Screen-Implementation-master\POC-Screen-Implementation.iml" filepath="C:\Users\HHK\Desktop\New folder (7)\POC-Screen-Implementation-master\POC-Screen-Implementation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\HHK\Desktop\New folder (7)\POC-Screen-Implementation-master\app\app.iml" filepath="C:\Users\HHK\Desktop\New folder (7)\POC-Screen-Implementation-master\app\app.iml" />
+    </modules>
+  </component>
+</project>
