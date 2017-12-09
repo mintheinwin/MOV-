@@ -9,12 +9,14 @@ import android.support.v4.view.ViewPager;
 import android.widget.TextView;
 
 import com.mtw.movie_poc_screen.R;
-import com.mtw.movie_poc_screen.adapters.MovieImagesPagerAdapter;
+import com.mtw.movie_poc_screen.adapters.MoviesPagerAdapter;
 import com.mtw.movie_poc_screen.data.models.MovieModel;
 import com.mtw.movie_poc_screen.data.vo.MoviePopularVO;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,13 +25,13 @@ import butterknife.ButterKnife;
  * Created by Aspire-V5 on 9/6/2017.
  */
 
-public class MovieOverviewActivity extends BaseActivity {
+public class MovieDetailsOverviewActivity extends BaseActivity {
 
     @BindView(R.id.collapsing_toolbar_layout)
     CollapsingToolbarLayout collapsingToolbarLayout;
 
     @BindView(R.id.vp_movie_overview_images)
-    ViewPager vpMovieOverviewImage;
+    ViewPager vpMovieOverview;
 
     @BindView(R.id.tv_released_date)
     TextView tvReleasedDate;
@@ -37,12 +39,12 @@ public class MovieOverviewActivity extends BaseActivity {
     @BindView(R.id.tv_movie_overview)
     TextView tvMovieOverview;
 
-    private static final String tap_movie_id = "tap_movie_id";
+    private static final String tap_movie_id = "fragment_id";
     private MoviePopularVO mMovie;
-    MovieImagesPagerAdapter movieImagesPagerAdapter;
+    MoviesPagerAdapter moviesPagerAdapter;
 
     public static Intent newIntent(Context context, MoviePopularVO movies){
-        Intent intent = new Intent(context, MovieOverviewActivity.class);
+        Intent intent = new Intent(context, MovieDetailsOverviewActivity.class);
         intent.putExtra(tap_movie_id, movies.getId());
         return intent;
     }
@@ -53,8 +55,9 @@ public class MovieOverviewActivity extends BaseActivity {
         setContentView(R.layout.activity_movie_overview);
         ButterKnife.bind(this, this);
 
-        movieImagesPagerAdapter = new MovieImagesPagerAdapter(getApplicationContext());
-        vpMovieOverviewImage.setAdapter(movieImagesPagerAdapter);
+        moviesPagerAdapter = new MoviesPagerAdapter(getApplicationContext());
+        vpMovieOverview.setAdapter(moviesPagerAdapter);
+        vpMovieOverview.setOffscreenPageLimit(moviesPagerAdapter.getCount());
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -64,13 +67,16 @@ public class MovieOverviewActivity extends BaseActivity {
             bindData(mMovie);
         }
 
+        Map<String, Object> mapsample=new HashMap<>();
+        List<Object> lisample=new ArrayList<>(mapsample.values());
+
     }
 
     private void bindData(MoviePopularVO movie){
         if(movie.getBackdropPath() != null){
             List<String> images = new ArrayList<>() ;
             images.add(movie.getBackdropPath());
-            movieImagesPagerAdapter.setImages(images);
+            moviesPagerAdapter.setImages(images);
         }
 
         collapsingToolbarLayout.setTitle(movie.getTitle());

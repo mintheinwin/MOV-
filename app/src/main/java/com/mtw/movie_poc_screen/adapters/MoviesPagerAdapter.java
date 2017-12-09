@@ -19,12 +19,12 @@ import java.util.List;
  * Created by Aspire-V5 on 12/8/2017.
  */
 
-public class MovieImagesPagerAdapter extends PagerAdapter {
+public class MoviesPagerAdapter extends PagerAdapter {
 
     private LayoutInflater mLayoutInflater;
     private List<String> images;
 
-    public MovieImagesPagerAdapter(Context context) {
+    public MoviesPagerAdapter(Context context) {
         super();
         mLayoutInflater = LayoutInflater.from(context);
         images = new ArrayList<>();

@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mtw.movie_poc_screen.R;
-import com.mtw.movie_poc_screen.activities.MovieOverviewActivity;
+import com.mtw.movie_poc_screen.activities.MovieDetailsOverviewActivity;
 import com.mtw.movie_poc_screen.adapters.MovieAdapter;
 import com.mtw.movie_poc_screen.components.EmptyViewPod;
 import com.mtw.movie_poc_screen.components.SmartRecyclerView;
@@ -98,7 +98,7 @@ public class MovieListFragment extends BaseFragment implements MovieItemDelegate
 
     @Override
     public void onTapMovieOverview(MoviePopularVO movie) {
-        Intent intent = MovieOverviewActivity.newIntent(getContext(), movie);
+        Intent intent = MovieDetailsOverviewActivity.newIntent(getContext(), movie);
         startActivity(intent);
 
     }
