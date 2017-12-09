@@ -1,6 +1,6 @@
 package com.mtw.movie_poc_screen.data.models;
 
-import com.mtw.movie_poc_screen.data.vo.MovieVO;
+import com.mtw.movie_poc_screen.data.vo.MoviePopularVO;
 import com.mtw.movie_poc_screen.events.RestApiEvents;
 import com.mtw.movie_poc_screen.network.MovieDataAgentImpl;
 import com.mtw.movie_poc_screen.utils.APIConstants;
@@ -22,7 +22,7 @@ public class MovieModel {
 
     private static MovieModel objInstance;
 
-    private List<MovieVO> mMovies;
+    private List<MoviePopularVO> mMovies;
     private int mMoviesPageIndex = 1;
 
     private MovieModel() {
@@ -47,8 +47,8 @@ public class MovieModel {
         mMoviesPageIndex = event.getLoadedPageIndex() + 1;
     }
 
-    public MovieVO getMovieById(int id){
-        for(MovieVO movies : mMovies){
+    public MoviePopularVO getMovieById(int id){
+        for(MoviePopularVO movies : mMovies){
             if(movies.getId()== id){
                 return movies;
             }

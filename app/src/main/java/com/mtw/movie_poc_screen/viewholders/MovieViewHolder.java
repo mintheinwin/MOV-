@@ -6,8 +6,9 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.mtw.movie_poc_screen.R;
-import com.mtw.movie_poc_screen.data.vo.MovieVO;
+import com.mtw.movie_poc_screen.data.vo.MoviePopularVO;
 import com.mtw.movie_poc_screen.delegates.MovieItemDelegate;
+import com.mtw.movie_poc_screen.utils.APIConstants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,7 +19,7 @@ import butterknife.OnClick;
  * Created by Aspire-V5 on 12/6/2017.
  */
 
-public class MovieViewHolder extends BaseViewHolder<MovieVO> {
+public class MovieViewHolder extends BaseViewHolder<MoviePopularVO> {
 
     @BindView(R.id.iv_poster)
     ImageView ivPoster;
@@ -30,7 +31,7 @@ public class MovieViewHolder extends BaseViewHolder<MovieVO> {
     TextView tvTitle;
 
     private MovieItemDelegate mDelegate;
-    private MovieVO mMovie;
+    private MoviePopularVO mMovie;
 
     public MovieViewHolder(View itemView, MovieItemDelegate movieItemDelegate) {
         super(itemView);
@@ -39,11 +40,11 @@ public class MovieViewHolder extends BaseViewHolder<MovieVO> {
     }
 
     @Override
-    public void setData(MovieVO movie) {
+    public void setData(MoviePopularVO movie) {
         mMovie = movie;
 
         Glide.with(ivPoster.getContext())
-                .load("http://padcmyanmar.com" + movie.getPosterPath())
+                .load(APIConstants.IMAGE_API + movie.getPosterPath())
                 .into(ivPoster);
 
         tvVoteAverage.setText(String.valueOf(movie.getVoteAverage()));

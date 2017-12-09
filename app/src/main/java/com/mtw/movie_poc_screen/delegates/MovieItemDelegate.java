@@ -1,7 +1,7 @@
 package com.mtw.movie_poc_screen.delegates;
 
 
-import com.mtw.movie_poc_screen.data.vo.MovieVO;
+import com.mtw.movie_poc_screen.data.vo.MoviePopularVO;
 
 /**
  * Created by Aspire-V5 on 12/6/2017.
@@ -9,5 +9,5 @@ import com.mtw.movie_poc_screen.data.vo.MovieVO;
 
 public interface MovieItemDelegate {
 
-    void onTapMovieOverview(MovieVO movie);
+    void onTapMovieOverview(MoviePopularVO movie);
 }

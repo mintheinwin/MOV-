@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Aspire-V5 on 12/6/2017.
  */
 
-public class MovieVO {
+public class MoviePopularVO {
 
     @SerializedName("vote_count")
     private int voteCount;

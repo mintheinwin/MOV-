@@ -16,7 +16,7 @@ import com.mtw.movie_poc_screen.components.EmptyViewPod;
 import com.mtw.movie_poc_screen.components.SmartRecyclerView;
 import com.mtw.movie_poc_screen.components.SmartScrollListener;
 import com.mtw.movie_poc_screen.data.models.MovieModel;
-import com.mtw.movie_poc_screen.data.vo.MovieVO;
+import com.mtw.movie_poc_screen.data.vo.MoviePopularVO;
 import com.mtw.movie_poc_screen.delegates.MovieItemDelegate;
 import com.mtw.movie_poc_screen.events.RestApiEvents;
 
@@ -97,7 +97,7 @@ public class MovieListFragment extends BaseFragment implements MovieItemDelegate
     }
 
     @Override
-    public void onTapMovieOverview(MovieVO movie) {
+    public void onTapMovieOverview(MoviePopularVO movie) {
         Intent intent = MovieOverviewActivity.newIntent(getContext(), movie);
         startActivity(intent);
 

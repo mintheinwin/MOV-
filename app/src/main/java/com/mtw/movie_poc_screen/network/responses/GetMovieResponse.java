@@ -1,7 +1,7 @@
 package com.mtw.movie_poc_screen.network.responses;
 
 import com.google.gson.annotations.SerializedName;
-import com.mtw.movie_poc_screen.data.vo.MovieVO;
+import com.mtw.movie_poc_screen.data.vo.MoviePopularVO;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class GetMovieResponse {
     private int pageNo;
 
     @SerializedName("popular-movies")
-    private List<MovieVO> popularMovies;
+    private List<MoviePopularVO> popularMovies;
 
     public int getCode() {
         return code;
@@ -43,7 +43,7 @@ public class GetMovieResponse {
         return pageNo;
     }
 
-    public List<MovieVO> getPopularMovies() {
+    public List<MoviePopularVO> getPopularMovies() {
         return popularMovies;
     }
 }

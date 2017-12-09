@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.mtw.movie_poc_screen.R;
 import com.mtw.movie_poc_screen.adapters.MovieImagesPagerAdapter;
 import com.mtw.movie_poc_screen.data.models.MovieModel;
-import com.mtw.movie_poc_screen.data.vo.MovieVO;
+import com.mtw.movie_poc_screen.data.vo.MoviePopularVO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +38,10 @@ public class MovieOverviewActivity extends BaseActivity {
     TextView tvMovieOverview;
 
     private static final String tap_movie_id = "tap_movie_id";
-    private MovieVO mMovie;
+    private MoviePopularVO mMovie;
     MovieImagesPagerAdapter movieImagesPagerAdapter;
 
-    public static Intent newIntent(Context context, MovieVO movies){
+    public static Intent newIntent(Context context, MoviePopularVO movies){
         Intent intent = new Intent(context, MovieOverviewActivity.class);
         intent.putExtra(tap_movie_id, movies.getId());
         return intent;
@@ -66,7 +66,7 @@ public class MovieOverviewActivity extends BaseActivity {
 
     }
 
-    private void bindData(MovieVO movie){
+    private void bindData(MoviePopularVO movie){
         if(movie.getBackdropPath() != null){
             List<String> images = new ArrayList<>() ;
             images.add(movie.getBackdropPath());

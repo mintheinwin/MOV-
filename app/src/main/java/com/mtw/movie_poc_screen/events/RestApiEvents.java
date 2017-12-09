@@ -1,6 +1,6 @@
 package com.mtw.movie_poc_screen.events;
 
-import com.mtw.movie_poc_screen.data.vo.MovieVO;
+import com.mtw.movie_poc_screen.data.vo.MoviePopularVO;
 
 import java.util.List;
 
@@ -38,9 +38,9 @@ public class RestApiEvents {
 
     public static class PopularMoviesDataLoadedEvent {
         private int loadedPageIndex;
-        private List<MovieVO> loadedMovies;
+        private List<MoviePopularVO> loadedMovies;
 
-        public PopularMoviesDataLoadedEvent(int loadedPageIndex, List<MovieVO> loadedMovies) {
+        public PopularMoviesDataLoadedEvent(int loadedPageIndex, List<MoviePopularVO> loadedMovies) {
             this.loadedPageIndex = loadedPageIndex;
             this.loadedMovies = loadedMovies;
         }
@@ -49,7 +49,7 @@ public class RestApiEvents {
             return loadedPageIndex;
         }
 
-        public List<MovieVO> getLoadedMovies() {
+        public List<MoviePopularVO> getLoadedMovies() {
             return loadedMovies;
         }
 
